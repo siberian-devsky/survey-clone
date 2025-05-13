@@ -1,35 +1,18 @@
 'use client'
 
-import { useState } from "react"
+import { SquareProps } from "@/types"
 
-interface Props {
-    sqId: string
-    sqContent?: string
-}
-
-const Square = ({sqId, sqContent}: Props) => {
-    const [active, setActive] = useState(false)
-
-    function handleClick() {
-        console.log(sqContent)
-        setActive(!active)
-    }
-
+export default function Square({ data, onClick }: SquareProps) {
     return (
-        <div id={sqId}
-             className={`
-                flex flex-col items-center justify-center text-5xl 
-                w-[300px] aspect-square border-4 p-0 m-0
-                ${active 
-                    ? 'bg-purple-500 border-pink-400'
-                    : 'bg-purple-500/30 border-slate-600'
-                }
+        <button 
+            className={`w-[300px] aspect-square bg-blue-800 border-2 border-black
+                ${data.disabled && "opacity-50 cursor-not-allowed"}
+                ${data.selected && !data.disabled && "bg-blue-500 border-purple-500"}
             `}
-             onClick={() => handleClick()}
-             >
-            {sqContent}
-        </div>
+            disabled={data.disabled}
+            onClick={onClick}
+        >       
+            {data.id}
+        </button>
     )
-};
-
-export default Square;
+}

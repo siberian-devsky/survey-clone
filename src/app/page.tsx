@@ -1,7 +1,7 @@
 import Board from "@/components/Board";
 
-export default function App() {
+export default function Survey() {
     return (
-        <Board name="myBoard"/>
+        <Board />
     )
 }
