@@ -9,4 +9,8 @@ type SquareProps = {
   onClick: () => void
 }
 
-export type { SquareData, SquareProps }
+type MenuProps = {
+  visible: boolean;
+};
+
+export type { SquareData, SquareProps, MenuProps }
