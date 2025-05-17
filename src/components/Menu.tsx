@@ -9,14 +9,12 @@ export default function Menu({ visible, resetCallback, menuUnlockCallback, menuL
     >
       <div
         className="w-full h-full flex items-center justify-center"
-        onMouseEnter={menuLockCallback}
-        onMouseLeave={menuUnlockCallback}
+        // lift up the prop. how do we do this? hmmmm?
       >
         <button
           className="w-1/4 h-[50px] border-2 border-teal-500 rounded-2xl"
-          onClick={resetCallback}
+          // lift up the prop. how do we do this? hmmmm?
         >
-          RESET
         </button>
       </div>
     </div>

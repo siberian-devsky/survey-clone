@@ -5,18 +5,14 @@ import { SquareProps } from "@/types"
 export default function Square({ data, password, onClick: clickCallback }: SquareProps) {
     return (
         <button 
+            // generate a square component that displays behavior consistent
+            // with its data type and parent function. remember, BOARD is
+            // the single source of truth here
             className={`w-[300px] aspect-square text-9xl transition-transform duration-200 rounded-3xl
-                ${data.disabled && "opacity-50 cursor-not-allowed"}
-                ${data.selected
-                    ? "border-4 border-yellow-300 text-yellow-300 bg-gray-500 scale-90"
-                    : "border-2 border-white text-white bg-slate-700 scale-100"
-                }
-                ${(password === "265") && "border-4 border-green-500 bg-green-800/70"}
-            `}
-            disabled={data.disabled}
-            onClick={clickCallback}
+                
+                `} // conditional rendering JSX goes inside the rest of that ^^^^^
         >       
-            {data.id + 1}
+            {/* square label renders here */}
         </button>
     )
 }
