@@ -1,73 +1,99 @@
-"use client"
-import { useState, useEffect, useRef } from "react";
-import Square from "./Square";
-import { SquareData } from "@/types";
-import Menu from "@/components/Menu";
+'use client'
+import { useState, useEffect, useRef } from 'react';
+import Square from './Square';
+import Menu from '@/components/Menu';
+import { SquareProps, VaultStatus } from '@/types';
 
-const MAXSELECTIONS = 3
+const KEY = [3, 7, 6, 9];
+const KEYLENGTH = KEY.length;
 
 const Board = () => {
-    // init board data (menu lock, manu visible, password, menu lock ref)
-    
-    // init squares data
+    // the menu
+    const [menuVisible, setMenuVisible] = useState(false);
+    const [menuFrozen, setMenuFrozen] = useState(false);
+    const menuFrozenRef = useRef(menuFrozen);
 
-    // update menu locked ref
-    useEffect(() => {
-    }, [])
+    // input sequence
+    const [currentInputSequence, setCurrentInputSequence] = useState<number[]>([]);
 
+    // square state (vaultStatus is stored per square)
+    const [squareData, setSquareData] = useState<SquareProps[]>(
+        Array(9)
+            .fill(null)
+            .map((_, index) => ({
+                id: index + 1,
+                selected: false,
+                disabled: false,
+                vaultStatus: 'locked' as VaultStatus,
+                handleClick: () => {}
+            })
+        )
+    );
 
-    useEffect(() => {
-        // define function that calculates MouseEvent mouse position and opend menu
-
-        // add the function to an event listener
-        
-        // remove the event listener
-        
-    }, []);
-
-
-
-    // handle menu reset click
     const resetBoard = () => {
-        // map squares and update attributes to default
-        
-        // set squares
-    }
+        setTimeout(() => {
+            const updatedSquareData = squareData.map(square => ({
+                ...square,
+                selected: false,
+                disabled: false,
+                vaultStatus: 'locked' as VaultStatus
+            }));
 
-    // make sure the menu stays available for interaction
-    const lockMenu = () => {
-        
+            setSquareData(updatedSquareData);
+            setCurrentInputSequence([]);
+        }, 1500);
     };
 
-    const unlockMenu = () => {
-        
+    const areArraysEqual = (attempt: number[], secret: number[]): boolean => {
+        if (attempt.length !== secret.length) return false;
+        return attempt.every((value, index) => value === secret[index]);
     };
-    // ---- ---- ---- ----
 
+    const handleSquareClick = (id: number) => {
+        const nextSequence = [...currentInputSequence, id];
+        setCurrentInputSequence(nextSequence);
 
-    // handle square click
-    const handleSquareClick = () => {
-        // map new square array, toggle 'selected' state and return each
-        
-        // check if the requisite number of selections have
-        // been made and update the board accordingly (red=wrong code; green=correct code)
+        const updatedSquareData = squareData.map(square => ({
+            ...square,
+            selected: square.id === id ? !square.selected : square.selected,
+            disabled: square.id === id ? !square.disabled : square.disabled
+        }));
 
-        // validate unlock code
+        setSquareData(updatedSquareData);
 
-        // set squares
-        
-    }
-    
+        const selectedCount = updatedSquareData.filter(square => square.selected).length;
+
+        if (selectedCount === KEYLENGTH) {
+            const status: VaultStatus = areArraysEqual(KEY, nextSequence) ? 'unlocked' : 'error';
+
+            const animatedSquareData = updatedSquareData.map(square => ({
+                ...square,
+                vaultStatus: status
+            }));
+
+            setSquareData(animatedSquareData);
+            resetBoard();
+        }
+    };
+
     return (
-        <div className="flex items-center justify-center min-h-screen">
-            <div className="h-1/2 mx-auto">
-                <div className="p-8 grid grid-cols-3 bg-black gap-6 rounded-lg">
-                    {/* generate a square with the proper data */}
+        <section id='keypad' className='flex items-center justify-center min-h-screen'>
+            <div className='h-1/2 mx-auto'>
+                <div className='p-8 grid grid-cols-3 bg-black gap-6 rounded-lg'>
+                    {squareData.map(square => (
+                        <Square
+                            key={square.id}
+                            id={square.id}
+                            selected={square.selected}
+                            disabled={square.disabled}
+                            vaultStatus={square.vaultStatus}
+                            handleClick={() => handleSquareClick(square.id)}
+                        />
+                    ))}
                 </div>
             </div>
-            {/* display the menu */}
-        </div>
-  )
+        </section>
+    );
 };
 
 export default Board;

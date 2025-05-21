@@ -2,6 +2,8 @@ import Board from "@/components/Board";
 
 export default function Survey() {
     return (
-        <Board />
+        <main>
+            <Board />
+        </main>
     )
 }

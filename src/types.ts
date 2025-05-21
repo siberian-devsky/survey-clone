@@ -1,13 +1,11 @@
-type SquareData = {
+type VaultStatus = 'locked' | 'unlocked' | 'error'
+
+type SquareProps = {
   id: number
   selected: boolean
   disabled: boolean
-}
-
-type SquareProps = {
-  data: SquareData
-  password: string
-  onClick: () => void
+  vaultStatus: VaultStatus
+  handleClick: () => void
 }
 
 type MenuProps = {
@@ -17,4 +15,4 @@ type MenuProps = {
   menuUnlockCallback: () => void;
 };
 
-export type { SquareData, SquareProps, MenuProps }
+export type { SquareProps, MenuProps, VaultStatus }
