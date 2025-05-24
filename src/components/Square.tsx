@@ -1,22 +1,30 @@
 'use client'
 
-import { SquareProps } from "@/types"
+import { SquareData } from "@/types"
+import Image from "next/image"
+import { buildWeatherIconUrl } from "@/lib/url-builder"
+import Link from "next/link"
 
-export default function Square({ data, password, onClick: clickCallback }: SquareProps) {
+export default function Square({ display }: SquareData) {
+    console.log(display)
     return (
-        <button 
-            className={`w-[300px] aspect-square text-9xl transition-transform duration-200 rounded-3xl
-                ${data.disabled && "opacity-50 cursor-not-allowed"}
-                ${data.selected
-                    ? "border-4 border-yellow-300 text-yellow-300 bg-gray-500 scale-90"
-                    : "border-2 border-white text-white bg-slate-700 scale-100"
-                }
-                ${(password === "265") && "border-4 border-green-500 bg-green-800/70"}
+        <Link
+            href={`https://www.timeanddate.com/weather/?query=${display.city}`}
+            className={`
+                w-[300px] aspect-square transition-transform duration-200 rounded-3xl
+                border-teal-500 border-4 bg-teal-800/60 hover:border-white hover:bg-teal-500/60 p-5  
             `}
-            disabled={data.disabled}
-            onClick={clickCallback}
         >       
-            {data.id + 1}
-        </button>
+            <div className="flex flex-col items-center justify-center">
+                <p className="text-2xl">{display.city}</p>
+                <Image 
+                    src={buildWeatherIconUrl(display.icon)}
+                    alt='current weather icon'
+                    width={200}
+                    height={200}
+                />
+                <p className="text-xl">{display.temp}</p>
+            </div>
+        </Link>
     )
 }

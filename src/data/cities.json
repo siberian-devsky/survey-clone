@@ -1,0 +1,230 @@
+{
+    "world": {
+        "cities": [
+            {
+                "city": "Tokyo",
+                "cityPop": 37400068,
+                "country": "Japan",
+                "countryPop": 125800000,
+                "lat": 35.6762,
+                "lon": 139.6503
+            },
+            {
+                "city": "Delhi",
+                "cityPop": 32900000,
+                "country": "India",
+                "countryPop": 1380000000,
+                "lat": 28.7041,
+                "lon": 77.1025
+            },
+            {
+                "city": "Shanghai",
+                "cityPop": 28500000,
+                "country": "China",
+                "countryPop": 1439000000,
+                "lat": 31.2304,
+                "lon": 121.4737
+            },
+            {
+                "city": "Dhaka",
+                "cityPop": 22400000,
+                "country": "Bangladesh",
+                "countryPop": 165000000,
+                "lat": 23.8103,
+                "lon": 90.4125
+            },
+            {
+                "city": "São Paulo",
+                "cityPop": 22200000,
+                "country": "Brazil",
+                "countryPop": 215000000,
+                "lat": -23.5505,
+                "lon": -46.6333
+            },
+            {
+                "city": "Mexico City",
+                "cityPop": 21800000,
+                "country": "Mexico",
+                "countryPop": 129000000,
+                "lat": 19.4326,
+                "lon": -99.1332
+            },
+            {
+                "city": "Beijing",
+                "cityPop": 21500000,
+                "country": "China",
+                "countryPop": 1439000000,
+                "lat": 39.9042,
+                "lon": 116.4074
+            },
+            {
+                "city": "Cairo",
+                "cityPop": 21300000,
+                "country": "Egypt",
+                "countryPop": 102000000,
+                "lat": 30.0444,
+                "lon": 31.2357
+            },
+            {
+                "city": "Mumbai",
+                "cityPop": 20400000,
+                "country": "India",
+                "countryPop": 1380000000,
+                "lat": 19.0760,
+                "lon": 72.8777
+            }
+        ]
+    },
+    "us": {
+        "cities": [
+            {
+                "city": "New York",
+                "cityPop": 8336817,
+                "state": "New York",
+                "statePop": 19300000,
+                "lat": 40.7128,
+                "lon": -74.0060
+            },
+            {
+                "city": "Los Angeles",
+                "cityPop": 3898747,
+                "state": "California",
+                "statePop": 39540000,
+                "lat": 34.0522,
+                "lon": -118.2437
+            },
+            {
+                "city": "Chicago",
+                "cityPop": 2746388,
+                "state": "Illinois",
+                "statePop": 12670000,
+                "lat": 41.8781,
+                "lon": -87.6298
+            },
+            {
+                "city": "Houston",
+                "cityPop": 2304580,
+                "state": "Texas",
+                "statePop": 30030000,
+                "lat": 29.7604,
+                "lon": -95.3698
+            },
+            {
+                "city": "Phoenix",
+                "cityPop": 1608139,
+                "state": "Arizona",
+                "statePop": 7280000,
+                "lat": 33.4484,
+                "lon": -112.0740
+            },
+            {
+                "city": "Philadelphia",
+                "cityPop": 1603797,
+                "state": "Pennsylvania",
+                "statePop": 13000000,
+                "lat": 39.9526,
+                "lon": -75.1652
+            },
+            {
+                "city": "San Antonio",
+                "cityPop": 1434625,
+                "state": "Texas",
+                "statePop": 30030000,
+                "lat": 29.4241,
+                "lon": -98.4936
+            },
+            {
+                "city": "San Diego",
+                "cityPop": 1386932,
+                "state": "California",
+                "statePop": 39540000,
+                "lat": 32.7157,
+                "lon": -117.1611
+            },
+            {
+                "city": "Dallas",
+                "cityPop": 1304379,
+                "state": "Texas",
+                "statePop": 30030000,
+                "lat": 32.7767,
+                "lon": -96.7970
+            }
+        ]
+    },
+    "eu": {
+        "cities": [
+            {
+                "city": "Istanbul",
+                "cityPop": 15460000,
+                "country": "Turkey",
+                "countryPop": 84300000,
+                "lat": 41.0082,
+                "lon": 28.9784
+            },
+            {
+                "city": "Moscow",
+                "cityPop": 12540000,
+                "country": "Russia",
+                "countryPop": 146200000,
+                "lat": 55.7558,
+                "lon": 37.6176
+            },
+            {
+                "city": "London",
+                "cityPop": 9540000,
+                "country": "United Kingdom",
+                "countryPop": 67500000,
+                "lat": 51.5074,
+                "lon": -0.1278
+            },
+            {
+                "city": "Saint Petersburg",
+                "cityPop": 5380000,
+                "country": "Russia",
+                "countryPop": 146200000,
+                "lat": 59.9311,
+                "lon": 30.3609
+            },
+            {
+                "city": "Berlin",
+                "cityPop": 3670000,
+                "country": "Germany",
+                "countryPop": 83200000,
+                "lat": 52.5200,
+                "lon": 13.4050
+            },
+            {
+                "city": "Madrid",
+                "cityPop": 3230000,
+                "country": "Spain",
+                "countryPop": 47400000,
+                "lat": 40.4168,
+                "lon": -3.7038
+            },
+            {
+                "city": "Kiev",
+                "cityPop": 2960000,
+                "country": "Ukraine",
+                "countryPop": 44130000,
+                "lat": 50.4501,
+                "lon": 30.5234
+            },
+            {
+                "city": "Rome",
+                "cityPop": 2870000,
+                "country": "Italy",
+                "countryPop": 59500000,
+                "lat": 41.9028,
+                "lon": 12.4964
+            },
+            {
+                "city": "Paris",
+                "cityPop": 2160000,
+                "country": "France",
+                "countryPop": 67800000,
+                "lat": 48.8566,
+                "lon": 2.3522
+            }
+        ]
+    }
+}
